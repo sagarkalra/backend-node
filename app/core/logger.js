@@ -10,9 +10,9 @@ const constant = require('../config/constant');
 
 const logFormat = format.combine(
     format.colorize(),
-    format.printf(config => `[${moment().format('YYYY-MM-DD hh:mm:ss')}]`
+    printf(config => `[${moment().format('YYYY-MM-DD hh:mm:ss')}]`
     + `[${process.env.LOG_LABEL}.${config.level}]: ${
-        config.message ? JSON.stringify(config.message) : ''}`)
+        config.message ? JSON.stringify(config.message) : ''}`),
 );
 
 const options = {
