@@ -1,0 +1,29 @@
+{
+    "name": "nodejs-framework",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www",
+        "dev": "nodemon .bin/www",
+        "lint": "eslint app/",
+        "test": "nyc mocha test/",
+        "coverage": "nyc --reporter=lcov mocha test/"
+    },
+    "dependencies": {
+        "debug": "2.6.9",
+        "dotenv": "8.1.0",
+        "express": "~4.16.0",
+        "moment": "2.24.0",
+        "request": "2.88.0",
+        "winston": "3.2.1"
+    },
+    "devDependencies": {
+        "chai": "4.2.0",
+        "chai-http": "4.3.0",
+        "eslint": "5.4.0",
+        "eslint-config-airbnb-base": "13.1.0",
+        "eslint-plugin-import": "2.14.0",
+        "mocha": "6.2.0",
+        "nyc": "14.1.1"
+    }
+}
