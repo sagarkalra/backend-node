@@ -10,9 +10,7 @@ const constant = require('../config/constant');
 
 const logFormat = format.combine(
     format.colorize(),
-    printf(config => `[${moment().format('YYYY-MM-DD hh:mm:ss')}]`
-    + `[${process.env.LOG_LABEL}.${config.level}]: ${
-        config.message ? JSON.stringify(config.message) : ''}`),
+    printf(config => `${config.level}:[${moment().format('YYYY-MM-DD hh:mm:ss')}][${process.env.LOG_LABEL}]: ${config.message ? config.message : ''}`),
 );
 
 const options = {
@@ -47,3 +45,8 @@ const logger = new createLogger({
 });
 
 module.exports = logger;
+module.exports.stream = {
+    write: function(message, encoding){
+        logger.info(message);
+    }
+};
